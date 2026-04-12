@@ -592,7 +592,7 @@ h2 {
   width: 100%;
   height: auto;
   object-fit: contain;
-  object-position: center 18%;
+  object-position: center center;
   border-radius: 16px;
 }
 
@@ -803,8 +803,9 @@ textarea {
   }
 
   .about-portrait img {
-    max-height: 72vh;
-    object-position: center 15%;
+    max-height: min(70vh, 460px);
+    object-fit: contain;
+    object-position: center center;
     border-radius: 12px;
   }
 }
