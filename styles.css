@@ -1,13 +1,13 @@
 :root {
-  --bg: #fffdf9;
-  --surface: #fff;
-  --surface-soft: #faf6f1;
-  --text: #3f342f;
-  --muted: #6d5f59;
-  --rose-gold: #b88a55;
-  --gold-soft: #d8bb85;
-  --border: #eadfce;
-  --shadow: 0 10px 24px rgba(184, 138, 85, 0.12);
+  --bg: #fdf7f2;
+  --surface: #fffaf6;
+  --surface-soft: #f9efe9;
+  --text: #4b3a38;
+  --muted: #7e6a65;
+  --rose-gold: #b88978;
+  --gold-soft: #e4c8ae;
+  --border: #ecdcd0;
+  --shadow: 0 12px 30px rgba(184, 137, 120, 0.12);
 }
 
 * {
@@ -18,10 +18,40 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background: var(--bg);
+  background:
+    radial-gradient(circle at 18% 12%, rgba(255, 232, 223, 0.6), transparent 38%),
+    radial-gradient(circle at 86% 24%, rgba(249, 230, 218, 0.6), transparent 34%),
+    linear-gradient(165deg, #fffdf8 0%, #fdf7f2 45%, #f8ede7 100%);
   color: var(--text);
-  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.65;
+  position: relative;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 190px;
+  height: 190px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.45;
+  background:
+    radial-gradient(circle at 42% 30%, rgba(255, 255, 255, 0.85) 0 7px, transparent 8px),
+    radial-gradient(circle at 66% 62%, rgba(255, 255, 255, 0.65) 0 5px, transparent 6px),
+    radial-gradient(circle at 20% 76%, rgba(246, 215, 190, 0.5) 0 9px, transparent 10px);
+  filter: drop-shadow(0 0 8px rgba(255, 246, 236, 0.8));
+}
+
+body::before {
+  top: 10px;
+  right: 8px;
+}
+
+body::after {
+  bottom: 12px;
+  left: 8px;
 }
 
 img {
@@ -42,7 +72,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 253, 249, 0.96);
+  background: rgba(255, 250, 246, 0.93);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border);
 }
@@ -130,7 +160,7 @@ a {
 }
 
 .kicker {
-  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--rose-gold);
@@ -141,7 +171,7 @@ a {
 h1,
 h2,
 h3 {
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif;
   line-height: 1.2;
   margin: 0 0 0.8rem;
   color: #2f2824;
@@ -206,7 +236,7 @@ h2 {
   justify-content: center;
   padding: 0.68rem 1.1rem;
   border-radius: 999px;
-  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
   font-size: 0.84rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -235,7 +265,7 @@ h2 {
 
 .signature-line {
   margin-top: 1.2rem;
-  font-family: "Cormorant Garamond", Georgia, serif;
+  font-family: "Playfair Display", Georgia, serif;
   font-size: clamp(1.2rem, 3.6vw, 1.7rem);
   color: #5b4438;
   line-height: 1.35;
@@ -287,7 +317,7 @@ h2 {
 label {
   display: block;
   margin-bottom: 0.35rem;
-  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
   font-size: 0.85rem;
   color: var(--muted);
 }
@@ -313,7 +343,8 @@ textarea {
   border-top: 1px solid var(--border);
   margin-top: 2rem;
   color: var(--muted);
-  font-size: 0.9rem;
+  font-size: 0.92rem;
+  background: linear-gradient(180deg, rgba(255, 248, 242, 0.2), rgba(255, 248, 242, 0.72));
 }
 
 @media (min-width: 900px) {
@@ -348,5 +379,14 @@ textarea {
   .hero-grid {
     grid-template-columns: 1fr;
     gap: 1.2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  body::before,
+  body::after {
+    width: 130px;
+    height: 130px;
+    opacity: 0.28;
   }
 }
