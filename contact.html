@@ -49,24 +49,36 @@
 <section class="section">
   <div class="container hero-grid">
     <div class="contact-box card">
-      <form class="form-grid" action="#" method="post">
+      <form
+        id="contact-form"
+        class="form-grid"
+        action="https://formsubmit.co/ajax/photographyrosegold@gmail.com"
+        method="post"
+        novalidate
+      >
+        <input type="hidden" name="_subject" value="New contact message from photographyrosegold.uk" />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+
         <div>
           <label for="name">Full Name</label>
-          <input id="name" name="name" type="text" autocomplete="name" required />
+          <input id="name" name="name" type="text" autocomplete="name" maxlength="120" required />
         </div>
         <div>
           <label for="email">Email</label>
-          <input id="email" name="email" type="email" autocomplete="email" required />
+          <input id="email" name="email" type="email" autocomplete="email" maxlength="160" required />
         </div>
         <div>
           <label for="phone">Phone</label>
-          <input id="phone" name="phone" type="tel" autocomplete="tel" />
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40" />
         </div>
         <div>
           <label for="message">Tell me about your session</label>
-          <textarea id="message" name="message" required></textarea>
+          <textarea id="message" name="message" maxlength="2500" required></textarea>
         </div>
-        <button class="btn btn-primary" type="submit">Send Message</button>
+
+        <button class="btn btn-primary" type="submit" data-default-text="Send Message">Send Message</button>
+        <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
       </form>
     </div>
     <aside class="card">
@@ -75,6 +87,7 @@
       <p><strong>Phone:</strong> +447594490900</p>
       <p><strong>Social:</strong> Photography Rose Gold UK</p>
       <p class="note">For compassionate memory sessions, please mention this in your message so support can be prioritised with privacy and care.</p>
+      <p class="note">Important setup step: when the first message is sent, FormSubmit will email photographyrosegold@gmail.com for one-time activation. Click the confirmation link once to start receiving all future submissions.</p>
     </aside>
   </div>
 </section>
