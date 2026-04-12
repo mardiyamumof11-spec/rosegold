@@ -174,30 +174,44 @@ a {
 }
 
 .hero {
-  padding: clamp(2.2rem, 8vw, 5rem) 0 2.5rem;
+  position: relative;
+  isolation: isolate;
+  padding: clamp(2.5rem, 8vw, 5.5rem) 0 clamp(3rem, 8vw, 6rem);
+  min-height: 120vh;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(36, 27, 25, 0.48), rgba(90, 58, 50, 0.34)),
+    url("rose gold/rosegold.jpg") center center / cover no-repeat;
+  background-attachment: fixed;
 }
 
-.hero-panel {
-  text-align: center;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background:
-    linear-gradient(160deg, rgba(255, 249, 244, 0.96), rgba(251, 239, 231, 0.92)),
-    url("rose gold/rosegold.jpg") center / cover no-repeat;
-  background-blend-mode: screen;
-  border: 1px solid rgba(226, 197, 173, 0.75);
-  border-radius: 30px;
-  padding: clamp(1.8rem, 5vw, 4rem) clamp(1rem, 4vw, 3rem);
-  box-shadow:
-    0 20px 38px rgba(158, 116, 94, 0.13),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.55);
+    radial-gradient(circle at 20% 30%, rgba(255, 242, 232, 0.22), transparent 48%),
+    radial-gradient(circle at 75% 12%, rgba(244, 208, 190, 0.18), transparent 42%),
+    linear-gradient(to bottom, rgba(254, 244, 236, 0.42), rgba(236, 202, 183, 0.32));
+}
+
+.hero-content {
+  text-align: center;
+  color: #fff8f2;
+  text-shadow: 0 2px 16px rgba(34, 22, 18, 0.35);
+  max-width: min(920px, 94vw);
 }
 
 .kicker {
-  font-family: "Manrope", "Helvetica Neue", Arial, sans-serif;
+  font-family: "Cormorant Garamond", Georgia, serif;
   text-transform: uppercase;
-  letter-spacing: 0.22em;
-  color: #987267;
-  font-size: 0.68rem;
-  margin-bottom: 0.3rem;
+  letter-spacing: 0.24em;
+  color: #f2dfd2;
+  font-size: 0.78rem;
+  margin-bottom: 0.45rem;
+  font-weight: 600;
 }
 
 h1,
@@ -206,11 +220,11 @@ h3 {
   font-family: "Cormorant Garamond", Georgia, serif;
   line-height: 1.2;
   margin: 0 0 0.8rem;
-  color: #2f2824;
+  color: inherit;
 }
 
 h1 {
-  font-size: clamp(2.15rem, 7vw, 4.1rem);
+  font-size: clamp(1.8rem, 5.8vw, 3.45rem);
   font-weight: 600;
   letter-spacing: 0.01em;
 }
@@ -300,26 +314,47 @@ h2 {
   margin: 0.8rem auto 0;
 }
 
-.signature-line {
-  margin-top: 1.2rem;
+.hero-copy {
+  margin: 1.1rem auto 0;
+  width: min(700px, 100%);
+  padding: clamp(1rem, 3vw, 1.6rem) clamp(0.8rem, 3vw, 1.35rem);
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(42, 26, 22, 0.2), rgba(40, 25, 20, 0.34));
+  backdrop-filter: blur(1.5px);
+}
+
+.hero-copy p {
+  margin: 0.55rem 0;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(1.2rem, 3.6vw, 1.7rem);
-  color: #5b4438;
+  font-size: clamp(1.03rem, 2.5vw, 1.3rem);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+}
+
+.hero-poem {
+  margin-bottom: 0.85rem;
+}
+
+.signature-line {
+  margin-top: 1.1rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.15rem, 3vw, 1.55rem);
+  color: #fff3e8;
   line-height: 1.35;
 }
 
 .hero-script {
   margin: 0;
   font-family: "Allura", "Brush Script MT", cursive;
-  font-size: clamp(1.95rem, 6vw, 3rem);
-  color: #9c6e66;
+  font-size: clamp(1.6rem, 4.8vw, 2.6rem);
+  color: #ffe3d1;
   line-height: 1.1;
 }
 
 .hero-flourish {
   margin: 0.45rem auto 1.2rem;
   width: min(440px, 85%);
-  color: #b28975;
+  color: #f6d9c9;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
@@ -332,7 +367,7 @@ h2 {
   content: "";
   height: 1px;
   flex: 1;
-  background: linear-gradient(90deg, transparent, rgba(178, 137, 117, 0.8), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 234, 219, 0.95), transparent);
 }
 
 .cards {
@@ -476,5 +511,20 @@ textarea {
 
   .brand-name {
     font-size: clamp(1.2rem, 6.5vw, 1.7rem);
+  }
+
+  .hero {
+    min-height: 100vh;
+    background-attachment: scroll;
+    padding-top: 2.1rem;
+  }
+
+  .hero-copy {
+    padding: 0.95rem 0.75rem;
+  }
+
+  .hero-copy p {
+    font-size: 1rem;
+    line-height: 1.42;
   }
 }
