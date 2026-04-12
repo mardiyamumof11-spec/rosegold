@@ -51,6 +51,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0.8rem 0;
 }
@@ -63,23 +64,17 @@ a {
 }
 
 .brand-logo {
-  width: clamp(56px, 11vw, 76px);
-  height: clamp(56px, 11vw, 76px);
-  border-radius: 50%;
+  width: clamp(185px, 42vw, 340px);
+  height: auto;
+  border-radius: 12px;
   border: 1px solid var(--border);
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: var(--shadow);
-}
-
-.brand-name {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-weight: 600;
-  font-size: clamp(1.15rem, 3.3vw, 1.8rem);
-  letter-spacing: 0.02em;
-  color: var(--muted);
+  background: #fff;
 }
 
 .menu-button {
+  margin-left: auto;
   border: 1px solid var(--border);
   background: var(--surface);
   color: var(--rose-gold);
@@ -90,6 +85,7 @@ a {
 }
 
 .nav-wrap {
+  width: 100%;
   display: none;
   border-top: 1px solid var(--border);
 }
@@ -237,6 +233,14 @@ h2 {
   color: #4b4039;
 }
 
+.signature-line {
+  margin-top: 1.2rem;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(1.2rem, 3.6vw, 1.7rem);
+  color: #5b4438;
+  line-height: 1.35;
+}
+
 .cards {
   display: grid;
   gap: 1rem;
@@ -313,11 +317,17 @@ textarea {
 }
 
 @media (min-width: 900px) {
+  .header-inner {
+    flex-wrap: nowrap;
+    gap: 1.2rem;
+  }
+
   .menu-button {
     display: none;
   }
 
   .nav-wrap {
+    width: auto;
     display: block;
     border: 0;
   }
