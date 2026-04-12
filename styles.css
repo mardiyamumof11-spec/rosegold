@@ -382,6 +382,80 @@ h2 {
   padding: 1.1rem;
 }
 
+.service-cards {
+  gap: 1.15rem;
+}
+
+.service-card {
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(255, 248, 242, 0.92));
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.service-card h3 {
+  margin-bottom: 0;
+}
+
+.service-card p {
+  margin: 0;
+}
+
+.service-link {
+  margin-top: auto;
+  text-decoration: none;
+  align-self: flex-start;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--rose-gold);
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  padding: 0.42rem 0.8rem;
+}
+
+.service-link:hover,
+.service-link:focus-visible {
+  background: var(--surface-soft);
+  outline: none;
+}
+
+.service-groups {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.service-group {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: clamp(1rem, 3vw, 1.4rem);
+  box-shadow: var(--shadow);
+}
+
+.service-group h2 {
+  margin-bottom: 0.85rem;
+}
+
+.service-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 0.7rem;
+}
+
+.service-gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid rgba(236, 220, 208, 0.9);
+}
+
+.service-group .note {
+  margin-top: 0.9rem;
+}
+
 .gallery {
   display: grid;
   grid-template-columns: 1fr;
