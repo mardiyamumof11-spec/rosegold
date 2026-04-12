@@ -564,6 +564,42 @@ h2 {
   padding: 0.2rem 0 0.2rem 1rem;
 }
 
+.about-name {
+  margin: 0.2rem 0 0;
+  font-family: "Allura", "Brush Script MT", cursive;
+  font-size: clamp(1.5rem, 4.2vw, 2.2rem);
+  color: #9a7062;
+  letter-spacing: 0.03em;
+}
+
+.about-profile {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.about-portrait {
+  margin: 0;
+  width: min(420px, 100%);
+  border-radius: 22px;
+  overflow: hidden;
+  border: 1px solid rgba(236, 220, 208, 0.9);
+  box-shadow: 0 16px 36px rgba(184, 137, 120, 0.16);
+  background: linear-gradient(165deg, rgba(255, 250, 246, 0.94), rgba(255, 243, 235, 0.88));
+  padding: 0.5rem;
+}
+
+.about-portrait img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+  border-radius: 16px;
+}
+
+.about-copy p:first-child {
+  margin-top: 0;
+}
+
 .form-grid {
   display: grid;
   gap: 0.9rem;
@@ -686,6 +722,17 @@ textarea {
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
+
+  .about-profile {
+    grid-template-columns: minmax(260px, 360px) 1fr;
+    align-items: start;
+    gap: 1.5rem;
+  }
+
+  .about-portrait {
+    position: sticky;
+    top: 7.5rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -746,5 +793,9 @@ textarea {
 
   .review-gallery .gallery-item img {
     max-height: 80vh;
+  }
+
+  .about-portrait {
+    margin: 0 auto;
   }
 }
