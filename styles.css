@@ -169,6 +169,10 @@ h2 {
   border-bottom: 1px solid var(--border);
 }
 
+.home-welcome {
+  padding-bottom: clamp(2.8rem, 7vw, 5rem);
+}
+
 .divider {
   width: min(280px, 70%);
   margin: 1rem 0 1.3rem;
