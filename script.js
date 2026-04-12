@@ -128,6 +128,13 @@ const gallerySources = {
     'rose gold/love2.jpg',
     'rose gold/love3.jpg',
     'rose gold/love4.JPG',
+    'rose gold/hands.jpg',
+    'rose gold/hands1.jpg',
+    'rose gold/hands2.jpg',
+    'rose gold/hands3.jpg',
+    'rose gold/hands4.jpg',
+    'rose gold/hands5.jpg',
+    'rose gold/hands6.jpg',
   ],
   hands: [
     'rose gold/hands.jpg',
@@ -147,7 +154,7 @@ const renderGallery = (galleryEl) => {
     return;
   }
 
-  const matchingFiles = gallerySources[keyword].filter((filePath) => filePath.toLowerCase().includes(keyword));
+  const matchingFiles = gallerySources[keyword];
   if (!matchingFiles.length) {
     return;
   }
