@@ -72,9 +72,8 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(255, 250, 246, 0.93);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, rgba(255, 251, 247, 0.97), rgba(255, 250, 246, 0.88));
+  backdrop-filter: blur(8px);
 }
 
 .header-inner {
@@ -83,24 +82,29 @@ a {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 1rem;
-  padding: 0.8rem 0;
+  padding: 0.95rem 0 0.85rem;
 }
 
 .brand {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: clamp(0.5rem, 2vw, 1.1rem);
+  max-width: 100%;
 }
 
 .brand-logo {
-  width: clamp(185px, 42vw, 340px);
+  width: clamp(180px, 39vw, 320px);
   height: auto;
-  border-radius: 12px;
-  border: 1px solid var(--border);
   object-fit: contain;
-  box-shadow: var(--shadow);
-  background: #fff;
+}
+
+.brand-side-image {
+  width: clamp(78px, 14vw, 118px);
+  height: clamp(78px, 14vw, 118px);
+  border-radius: 999px;
+  object-fit: cover;
+  box-shadow: 0 10px 26px rgba(184, 137, 120, 0.2);
 }
 
 .menu-button {
@@ -338,6 +342,18 @@ textarea {
   resize: vertical;
 }
 
+
+.bottom-image-section {
+  padding: 1.2rem 0 0.3rem;
+}
+
+.bottom-feature-image {
+  width: min(960px, 100%);
+  margin: 0 auto;
+  border-radius: 20px;
+  box-shadow: 0 14px 35px rgba(184, 137, 120, 0.14);
+}
+
 .site-footer {
   padding: 1.2rem 0 2rem;
   border-top: 1px solid var(--border);
@@ -388,5 +404,18 @@ textarea {
     width: 130px;
     height: 130px;
     opacity: 0.28;
+  }
+
+  .brand {
+    gap: 0.5rem;
+  }
+
+  .brand-logo {
+    width: clamp(155px, 48vw, 210px);
+  }
+
+  .brand-side-image {
+    width: clamp(62px, 20vw, 82px);
+    height: clamp(62px, 20vw, 82px);
   }
 }
