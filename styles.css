@@ -538,9 +538,22 @@ h2 {
 
 .gallery[data-gallery-fit="contain"] .gallery-item img {
   aspect-ratio: auto;
+  width: 100%;
+  height: auto;
   max-height: none;
   object-fit: contain;
+  object-position: center top;
   border-radius: 12px;
+}
+
+.review-gallery .gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-gallery .gallery-item img {
+  background: #fff;
 }
 
 .gallery-empty {
@@ -745,5 +758,9 @@ textarea {
 
   .gallery[data-gallery-fit="contain"] .gallery-item img {
     border-radius: 10px;
+  }
+
+  .review-gallery .gallery-item img {
+    max-height: 80vh;
   }
 }
