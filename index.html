@@ -7,15 +7,20 @@
   <meta name="description" content="Elegant photography website for Rose Gold UK Photography." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Rose Gold UK Photography home">
-        <img class="brand-logo" src="rose gold/top.jpg" alt="Rose Gold UK Photography logo" />
-        <img class="brand-side-image" src="rose gold/rosegold.jpg" alt="Rose Gold floral brand image" />
+        <span class="brand-mark">
+          <img class="brand-logo" src="rose gold/top.jpg" alt="Rose Gold UK Photography logo" />
+        </span>
+        <span class="brand-text">
+          <span class="brand-name">Rose Gold UK</span>
+          <span class="brand-tagline">Fine Art Photography</span>
+        </span>
       </a>
       <button class="menu-button" type="button" aria-label="Toggle menu" aria-controls="site-nav" aria-expanded="false">☰</button>
       <nav id="site-nav" class="nav-wrap" aria-label="Primary navigation">
@@ -37,13 +42,14 @@
   <main>
 
 <section class="hero">
-  <div class="container hero-grid">
-    <div>
-      <p class="kicker">Rose Gold UK</p>
-      <h1>Capture it your way</h1>
-      <hr class="divider" />
-      <p class="lead">Memory will fail, eyesight will weaken, but pictures will capture a memory forever, capture a memory forever.</p>
-      <p class="lead">A picture won’t let you forget, neither fade nor disappear, so make your memory eternal, take the click.</p>
+  <div class="container">
+    <div class="hero-panel">
+      <p class="kicker">Luxury Portrait & Wedding Photography</p>
+      <h1>Rose Gold UK Photography</h1>
+      <p class="hero-script">Capture it your way</p>
+      <div class="hero-flourish" aria-hidden="true">❦</div>
+      <p class="lead">Memory will fail and eyesight may weaken, but a beautiful photograph keeps your most meaningful moments alive forever.</p>
+      <p class="lead">Your story deserves to feel timeless, graceful, and warm every time you look back.</p>
       <div class="button-row">
         <a class="btn btn-primary" href="services.html">View Services</a>
         <a class="btn btn-secondary" href="contact.html">Book a Session</a>
