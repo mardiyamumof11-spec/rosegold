@@ -459,6 +459,56 @@ h2 {
   outline: none;
 }
 
+
+.service-card-trigger {
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(117, 80, 67, 0.08);
+}
+
+.service-card-trigger:hover {
+  transform: translateY(-2px);
+  transition: transform 220ms ease;
+}
+
+.service-toggle {
+  cursor: pointer;
+}
+
+.service-galleries {
+  margin-top: 1.8rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.service-gallery-panel {
+  background: linear-gradient(160deg, rgba(255, 251, 248, 0.95), rgba(250, 238, 230, 0.92));
+  border: 1px solid rgba(236, 220, 208, 0.95);
+  border-radius: 18px;
+  padding: clamp(1rem, 3vw, 1.35rem);
+  box-shadow: 0 12px 28px rgba(117, 80, 67, 0.12);
+}
+
+.service-gallery-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.service-gallery-header h2 {
+  margin: 0;
+  font-size: clamp(1.35rem, 3.5vw, 1.85rem);
+}
+
+.service-inline-link {
+  color: #8a6559;
+  text-decoration-color: rgba(138, 101, 89, 0.4);
+  text-underline-offset: 0.2rem;
+  font-size: 0.92rem;
+}
+
 .service-groups {
   display: grid;
   gap: 1.2rem;
