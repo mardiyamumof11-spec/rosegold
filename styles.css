@@ -495,10 +495,13 @@ h2 {
 
 .service-gallery img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
   border-radius: 12px;
   border: 1px solid rgba(236, 220, 208, 0.9);
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .service-group .note {
@@ -514,36 +517,21 @@ h2 {
 .gallery-item {
   margin: 0;
   border-radius: 16px;
-  overflow: hidden;
+  overflow: visible;
   border: 1px solid rgba(236, 220, 208, 0.9);
   background: rgba(255, 250, 246, 0.8);
   box-shadow: 0 10px 24px rgba(86, 54, 42, 0.1);
+  padding: 0.55rem;
 }
 
 .gallery-item img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-}
-
-.gallery[data-gallery-fit="contain"] {
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1.1rem;
-}
-
-.gallery[data-gallery-fit="contain"] .gallery-item {
-  padding: 0.55rem;
-  overflow: visible;
-}
-
-.gallery[data-gallery-fit="contain"] .gallery-item img {
   aspect-ratio: auto;
-  width: 100%;
   height: auto;
-  max-height: none;
   object-fit: contain;
   object-position: center top;
   border-radius: 12px;
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .review-gallery .gallery-item {
@@ -747,16 +735,12 @@ textarea {
     line-height: 1.52;
   }
 
-  .gallery[data-gallery-fit="contain"] {
-    gap: 0.85rem;
-  }
-
-  .gallery[data-gallery-fit="contain"] .gallery-item {
+  .gallery-item {
     border-radius: 14px;
     padding: 0.4rem;
   }
 
-  .gallery[data-gallery-fit="contain"] .gallery-item img {
+  .gallery-item img {
     border-radius: 10px;
   }
 
