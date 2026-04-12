@@ -50,15 +50,82 @@
 </section>
 <section class="section">
   <div class="container">
-    <div class="cards service-cards">
-      <article class="card service-card"><h3>Family photography</h3><p>Relaxed family portraits with natural interaction in studio, home, or outdoor settings.</p><a class="service-link" href="family-pictures.html">Open gallery</a></article>
-      <article class="card service-card"><h3>Studio photography</h3><p>Classic and contemporary portraits in softly lit portrait sessions.</p><a class="service-link" href="studio-pictures.html">Open gallery</a></article>
-      <article class="card service-card"><h3>Special memory photography</h3><p>Sensitive photography for meaningful milestones you never want to forget.</p><a class="service-link" href="special-memory-pictures.html">Open gallery</a></article>
-      <article class="card service-card"><h3>Love Pictures</h3><p>Romantic sessions to celebrate your relationship in a timeless, heartfelt way.</p><a class="service-link" href="love-pictures.html">Open gallery</a></article>
-      <article class="card service-card"><h3>Wedding Services</h3><p>Elegant coverage of your ceremony, details, portraits, and celebration moments.</p><a class="service-link" href="wedding-pictures.html">Open gallery</a></article>
-      <article class="card service-card"><h3>Reviews from Customers</h3><p>Kind words from clients, shared as a dedicated review gallery.</p><a class="service-link" href="reviews.html">Open gallery</a></article>
-      <article class="card service-card"><h3>Pictures of Me Working</h3><p>A behind-the-scenes look at my workflow, care, and attention during real sessions.</p><a class="service-link" href="pictures-of-me-working.html">Open gallery</a></article>
-      <article class="card service-card"><h3>Home Photoshoot</h3><p>Soft, elegant lifestyle portraits captured in the comfort of your home.</p><a class="service-link" href="home-photoshoot.html">Open gallery</a></article>
+    <div class="cards service-cards" role="list" aria-label="Service gallery categories">
+      <article class="card service-card service-card-trigger" role="listitem">
+        <h3>Wedding services</h3>
+        <p>Elegant coverage of your ceremony, details, portraits, and celebration moments.</p>
+        <button class="service-link service-toggle" type="button" data-service-target="service-wedding" aria-expanded="false" aria-controls="service-wedding">View wedding gallery</button>
+      </article>
+      <article class="card service-card service-card-trigger" role="listitem">
+        <h3>Family photography</h3>
+        <p>Relaxed family portraits with natural interaction in studio, home, or outdoor settings.</p>
+        <button class="service-link service-toggle" type="button" data-service-target="service-family" aria-expanded="false" aria-controls="service-family">View family gallery</button>
+      </article>
+      <article class="card service-card service-card-trigger" role="listitem">
+        <h3>Studio photography</h3>
+        <p>Classic and contemporary portraits in softly lit portrait sessions.</p>
+        <button class="service-link service-toggle" type="button" data-service-target="service-studio" aria-expanded="false" aria-controls="service-studio">View studio gallery</button>
+      </article>
+      <article class="card service-card service-card-trigger" role="listitem">
+        <h3>Special memory photography</h3>
+        <p>Sensitive photography for meaningful milestones you never want to forget.</p>
+        <button class="service-link service-toggle" type="button" data-service-target="service-memory" aria-expanded="false" aria-controls="service-memory">View memory gallery</button>
+      </article>
+      <article class="card service-card service-card-trigger" role="listitem">
+        <h3>Love Pictures</h3>
+        <p>Romantic sessions to celebrate your relationship in a timeless, heartfelt way.</p>
+        <button class="service-link service-toggle" type="button" data-service-target="service-love" aria-expanded="false" aria-controls="service-love">View love gallery</button>
+      </article>
+      <article class="card service-card service-card-trigger" role="listitem">
+        <h3>Reviews from Customers</h3>
+        <p>Kind words from clients, shared as a dedicated review gallery.</p>
+        <button class="service-link service-toggle" type="button" data-service-target="service-reviews" aria-expanded="false" aria-controls="service-reviews">View review gallery</button>
+      </article>
+      <article class="card service-card service-card-trigger" role="listitem">
+        <h3>Pictures of Me Working</h3>
+        <p>A behind-the-scenes look at my workflow, care, and attention during real sessions.</p>
+        <button class="service-link service-toggle" type="button" data-service-target="service-me" aria-expanded="false" aria-controls="service-me">View behind-the-scenes gallery</button>
+      </article>
+      <article class="card service-card service-card-trigger" role="listitem">
+        <h3>Home Photoshoot</h3>
+        <p>Soft, elegant lifestyle portraits captured in the comfort of your home.</p>
+        <button class="service-link service-toggle" type="button" data-service-target="service-home" aria-expanded="false" aria-controls="service-home">View home photoshoot gallery</button>
+      </article>
+    </div>
+
+    <div class="service-galleries" aria-live="polite">
+      <section class="service-gallery-panel" id="service-wedding" hidden>
+        <div class="service-gallery-header"><h2>Wedding services gallery</h2><a class="service-inline-link" href="wedding-pictures.html">Open full page</a></div>
+        <div class="gallery" data-gallery-keyword="wedding" data-render="on-open"></div>
+      </section>
+      <section class="service-gallery-panel" id="service-family" hidden>
+        <div class="service-gallery-header"><h2>Family photography gallery</h2><a class="service-inline-link" href="family-pictures.html">Open full page</a></div>
+        <div class="gallery" data-gallery-keyword="family" data-render="on-open"></div>
+      </section>
+      <section class="service-gallery-panel" id="service-studio" hidden>
+        <div class="service-gallery-header"><h2>Studio photography gallery</h2><a class="service-inline-link" href="studio-pictures.html">Open full page</a></div>
+        <div class="gallery" data-gallery-keyword="studio" data-render="on-open"></div>
+      </section>
+      <section class="service-gallery-panel" id="service-memory" hidden>
+        <div class="service-gallery-header"><h2>Special memory photography gallery</h2><a class="service-inline-link" href="special-memory-pictures.html">Open full page</a></div>
+        <div class="gallery" data-gallery-keyword="zwanger" data-render="on-open"></div>
+      </section>
+      <section class="service-gallery-panel" id="service-love" hidden>
+        <div class="service-gallery-header"><h2>Love Pictures gallery</h2><a class="service-inline-link" href="love-pictures.html">Open full page</a></div>
+        <div class="gallery" data-gallery-keyword="love" data-render="on-open"></div>
+      </section>
+      <section class="service-gallery-panel" id="service-reviews" hidden>
+        <div class="service-gallery-header"><h2>Reviews from Customers gallery</h2><a class="service-inline-link" href="reviews.html">Open full page</a></div>
+        <div class="gallery" data-gallery-keyword="review" data-render="on-open"></div>
+      </section>
+      <section class="service-gallery-panel" id="service-me" hidden>
+        <div class="service-gallery-header"><h2>Pictures of Me Working gallery</h2><a class="service-inline-link" href="pictures-of-me-working.html">Open full page</a></div>
+        <div class="gallery" data-gallery-keyword="me" data-render="on-open"></div>
+      </section>
+      <section class="service-gallery-panel" id="service-home" hidden>
+        <div class="service-gallery-header"><h2>Home Photoshoot gallery</h2><a class="service-inline-link" href="home-photoshoot.html">Open full page</a></div>
+        <div class="gallery" data-gallery-keyword="athome" data-render="on-open"></div>
+      </section>
     </div>
   </div>
 </section>

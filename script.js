@@ -158,4 +158,51 @@ const renderGallery = (galleryEl) => {
   });
 };
 
-document.querySelectorAll('.gallery[data-gallery-keyword]').forEach(renderGallery);
+document.querySelectorAll('.gallery[data-gallery-keyword]:not([data-render="on-open"])').forEach(renderGallery);
+
+const serviceToggles = document.querySelectorAll('.service-toggle[data-service-target]');
+
+if (serviceToggles.length) {
+  const collapseOtherPanels = (activeId) => {
+    document.querySelectorAll('.service-gallery-panel[id]').forEach((panel) => {
+      if (panel.id !== activeId) {
+        panel.hidden = true;
+      }
+    });
+
+    serviceToggles.forEach((toggle) => {
+      const isActive = toggle.dataset.serviceTarget === activeId;
+      toggle.setAttribute('aria-expanded', String(isActive));
+    });
+  };
+
+  serviceToggles.forEach((toggle) => {
+    toggle.addEventListener('click', () => {
+      const panelId = toggle.dataset.serviceTarget;
+      const panel = panelId ? document.getElementById(panelId) : null;
+
+      if (!panel) {
+        return;
+      }
+
+      const isOpening = panel.hidden;
+      collapseOtherPanels(isOpening ? panelId : null);
+
+      if (!isOpening) {
+        panel.hidden = true;
+        toggle.setAttribute('aria-expanded', 'false');
+        return;
+      }
+
+      panel.hidden = false;
+
+      const galleryEl = panel.querySelector('.gallery[data-gallery-keyword]');
+      if (galleryEl && !galleryEl.dataset.rendered) {
+        renderGallery(galleryEl);
+        galleryEl.dataset.rendered = 'true';
+      }
+
+      panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+}
