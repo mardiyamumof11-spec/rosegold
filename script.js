@@ -120,3 +120,53 @@ if (contactForm) {
     }
   });
 }
+
+
+const gallerySources = {
+  love: [
+    'rose gold/love1.jpg',
+    'rose gold/love2.jpg',
+    'rose gold/love3.jpg',
+    'rose gold/love4.JPG',
+  ],
+  hands: [
+    'rose gold/hands.jpg',
+    'rose gold/hands1.jpg',
+    'rose gold/hands2.jpg',
+    'rose gold/hands3.jpg',
+    'rose gold/hands4.jpg',
+    'rose gold/hands5.jpg',
+    'rose gold/hands6.jpg',
+  ],
+};
+
+const renderGallery = (galleryEl) => {
+  const keyword = galleryEl?.dataset.galleryKeyword?.toLowerCase();
+
+  if (!keyword || !gallerySources[keyword]?.length) {
+    return;
+  }
+
+  const matchingFiles = gallerySources[keyword].filter((filePath) => filePath.toLowerCase().includes(keyword));
+  if (!matchingFiles.length) {
+    return;
+  }
+
+  galleryEl.innerHTML = '';
+
+  matchingFiles.forEach((filePath) => {
+    const figure = document.createElement('figure');
+    figure.className = 'gallery-item';
+
+    const image = document.createElement('img');
+    image.src = filePath;
+    image.alt = `${keyword} gallery image`;
+    image.loading = 'lazy';
+    image.decoding = 'async';
+
+    figure.appendChild(image);
+    galleryEl.appendChild(figure);
+  });
+};
+
+document.querySelectorAll('.gallery[data-gallery-keyword]').forEach(renderGallery);

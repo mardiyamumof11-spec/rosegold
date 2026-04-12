@@ -489,8 +489,23 @@ h2 {
 
 .gallery {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
+}
+
+.gallery-item {
+  margin: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(236, 220, 208, 0.9);
+  background: rgba(255, 250, 246, 0.8);
+  box-shadow: 0 10px 24px rgba(86, 54, 42, 0.1);
+}
+
+.gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
 }
 
 .gallery-empty {
