@@ -20,7 +20,7 @@ body {
   padding: 0;
   background: var(--bg);
   color: var(--text);
-  font-family: "Lora", Georgia, serif;
+  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
   line-height: 1.65;
 }
 
@@ -58,22 +58,24 @@ a {
 .brand {
   text-decoration: none;
   display: inline-flex;
-  flex-direction: column;
-  gap: 0.15rem;
+  align-items: center;
+  gap: 0.75rem;
 }
 
-.brand-script {
-  font-family: "Great Vibes", cursive;
-  color: var(--rose-gold);
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  line-height: 1;
+.brand-logo {
+  width: clamp(56px, 11vw, 76px);
+  height: clamp(56px, 11vw, 76px);
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  box-shadow: var(--shadow);
 }
 
-.brand-subtitle {
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  font-family: "Montserrat", Arial, sans-serif;
-  font-size: 0.65rem;
+.brand-name {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 600;
+  font-size: clamp(1.15rem, 3.3vw, 1.8rem);
+  letter-spacing: 0.02em;
   color: var(--muted);
 }
 
@@ -132,7 +134,7 @@ a {
 }
 
 .kicker {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--rose-gold);
@@ -155,13 +157,6 @@ h1 {
 
 h2 {
   font-size: clamp(1.7rem, 4vw, 2.6rem);
-}
-
-.script-heading {
-  font-family: "Great Vibes", cursive;
-  color: var(--rose-gold);
-  font-size: clamp(2rem, 7vw, 3.4rem);
-  margin-bottom: 0.4rem;
 }
 
 .section {
@@ -211,7 +206,7 @@ h2 {
   justify-content: center;
   padding: 0.68rem 1.1rem;
   border-radius: 999px;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 0.84rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -227,16 +222,10 @@ h2 {
   background: #fff;
 }
 
-.feature-image,
 .card,
-.gallery img,
 .contact-box {
   border-radius: 16px;
   box-shadow: var(--shadow);
-}
-
-.feature-image {
-  overflow: hidden;
 }
 
 .lead {
@@ -258,15 +247,19 @@ h2 {
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 0.9rem;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
 
-.gallery img {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
+.gallery-empty {
+  margin: 0;
+  padding: 1.4rem;
+  text-align: center;
+  background: var(--surface);
   border: 1px solid var(--border);
+  border-radius: 16px;
+  color: var(--muted);
+  font-size: 1.02rem;
 }
 
 .page-intro {
@@ -286,7 +279,7 @@ h2 {
 label {
   display: block;
   margin-bottom: 0.35rem;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: "Nunito Sans", "Helvetica Neue", Arial, sans-serif;
   font-size: 0.85rem;
   color: var(--muted);
 }
@@ -339,7 +332,7 @@ textarea {
   }
 
   .hero-grid {
-    grid-template-columns: 1.05fr 1fr;
-    gap: 1.8rem;
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
   }
 }
