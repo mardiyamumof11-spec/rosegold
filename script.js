@@ -121,30 +121,16 @@ if (contactForm) {
   });
 }
 
-
 const gallerySources = {
-  love: [
-    'rose gold/love1.jpg',
-    'rose gold/love2.jpg',
-    'rose gold/love3.jpg',
-    'rose gold/love4.JPG',
-    'rose gold/hands.jpg',
-    'rose gold/hands1.jpg',
-    'rose gold/hands2.jpg',
-    'rose gold/hands3.jpg',
-    'rose gold/hands4.jpg',
-    'rose gold/hands5.jpg',
-    'rose gold/hands6.jpg',
-  ],
-  hands: [
-    'rose gold/hands.jpg',
-    'rose gold/hands1.jpg',
-    'rose gold/hands2.jpg',
-    'rose gold/hands3.jpg',
-    'rose gold/hands4.jpg',
-    'rose gold/hands5.jpg',
-    'rose gold/hands6.jpg',
-  ],
+  family: ['rose gold/fam1.jpg', 'rose gold/fam2.jpg', 'rose gold/fam3.JPG', 'rose gold/family.JPG', 'rose gold/families.jpg'],
+  studio: ['rose gold/studio1.jpg', 'rose gold/studio2.jpg', 'rose gold/studio3.jpg', 'rose gold/studio4.jpg', 'rose gold/studio5.jpg', 'rose gold/studio6.JPG', 'rose gold/studio7.JPG', 'rose gold/studio8.JPG', 'rose gold/studio9.JPG', 'rose gold/studio10.JPG', 'rose gold/studio11.JPG', 'rose gold/studio12.JPG', 'rose gold/studio13.JPG', 'rose gold/studio14.JPG', 'rose gold/studio15.jpg', 'rose gold/studio16.JPG', 'rose gold/studio17.JPG', 'rose gold/studio18.JPG', 'rose gold/studio19.JPG', 'rose gold/studio20.JPG', 'rose gold/studio21.JPG', 'rose gold/studio22.JPG', 'rose gold/studio23.jpg', 'rose gold/studio24.jpg', 'rose gold/studio25.jpg', 'rose gold/studio26.jpg', 'rose gold/studio27.jpg', 'rose gold/studio60.jpg', 'rose gold/studio111.JPG'],
+  zwanger: ['rose gold/zwanger1.jpg', 'rose gold/zwanger2.JPG', 'rose gold/zwanger3.jpg', 'rose gold/zwanger4.jpg', 'rose gold/zwanger5.jpg'],
+  love: ['rose gold/love1.jpg', 'rose gold/love2.jpg', 'rose gold/love3.jpg', 'rose gold/love4.JPG', 'rose gold/hands.jpg', 'rose gold/hands1.jpg', 'rose gold/hands2.jpg', 'rose gold/hands3.jpg', 'rose gold/hands4.jpg', 'rose gold/hands5.jpg', 'rose gold/hands6.jpg'],
+  hands: ['rose gold/hands.jpg', 'rose gold/hands1.jpg', 'rose gold/hands2.jpg', 'rose gold/hands3.jpg', 'rose gold/hands4.jpg', 'rose gold/hands5.jpg', 'rose gold/hands6.jpg'],
+  wedding: ['rose gold/wedding1.jpg', 'rose gold/wedding2.JPG', 'rose gold/wedding3.JPG', 'rose gold/wedding4.JPG', 'rose gold/wedding5.JPG', 'rose gold/wedding6.png', 'rose gold/wedding7.png', 'rose gold/wedding8.png', 'rose gold/wedding9.png', 'rose gold/wedding10.JPG', 'rose gold/wedding11.JPG', 'rose gold/wedding13.jpg', 'rose gold/wedding14.PNG', 'rose gold/wedding15.JPG', 'rose gold/wedding16.JPG', 'rose gold/wedding18.JPG', 'rose gold/wedding19.JPG', 'rose gold/wedding20.jpg', 'rose gold/wedding21.jpg', 'rose gold/wedding111.jpg'],
+  review: ['rose gold/review1.JPG', 'rose gold/review2.JPG', 'rose gold/review3.PNG', 'rose gold/review4.jpg', 'rose gold/review5.jpg', 'rose gold/review6.PNG', 'rose gold/review7.PNG', 'rose gold/review8.PNG', 'rose gold/review9.PNG', 'rose gold/review10.PNG'],
+  me: ['rose gold/me1.jpg', 'rose gold/me2.jpg', 'rose gold/me3.jpg', 'rose gold/me4.JPG', 'rose gold/me5.JPG', 'rose gold/me6.HEIC', 'rose gold/me7.JPG', 'rose gold/rosegold.jpg'],
+  athome: ['rose gold/athome.JPG', 'rose gold/athome1.JPG', 'rose gold/athome2.JPG', 'rose gold/athome3.jpg', 'rose gold/athome4.jpg', 'rose gold/athome5.jpg'],
 };
 
 const renderGallery = (galleryEl) => {
@@ -155,19 +141,15 @@ const renderGallery = (galleryEl) => {
   }
 
   const matchingFiles = gallerySources[keyword];
-  if (!matchingFiles.length) {
-    return;
-  }
-
   galleryEl.innerHTML = '';
 
-  matchingFiles.forEach((filePath) => {
+  matchingFiles.forEach((filePath, index) => {
     const figure = document.createElement('figure');
     figure.className = 'gallery-item';
 
     const image = document.createElement('img');
     image.src = filePath;
-    image.alt = `${keyword} gallery image`;
+    image.alt = `${keyword} gallery image ${index + 1}`;
     image.loading = 'lazy';
     image.decoding = 'async';
 
