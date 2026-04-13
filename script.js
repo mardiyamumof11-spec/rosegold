@@ -159,3 +159,38 @@ const renderGallery = (galleryEl) => {
 };
 
 document.querySelectorAll('.gallery[data-gallery-keyword]:not([data-render="on-open"])').forEach(renderGallery);
+
+const videoLightbox = document.querySelector('#video-lightbox');
+const videoIframe = document.querySelector('#video-iframe');
+const videoCards = document.querySelectorAll('.video-card[data-video-id]');
+
+if (videoLightbox && videoIframe && videoCards.length > 0) {
+  const closeVideo = () => {
+    videoIframe.src = '';
+    videoLightbox.hidden = true;
+    document.body.style.overflow = '';
+  };
+
+  videoCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      const videoId = card.dataset.videoId;
+      if (!videoId) {
+        return;
+      }
+
+      videoIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+      videoLightbox.hidden = false;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  videoLightbox.querySelectorAll('[data-close-video]').forEach((control) => {
+    control.addEventListener('click', closeVideo);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !videoLightbox.hidden) {
+      closeVideo();
+    }
+  });
+}
