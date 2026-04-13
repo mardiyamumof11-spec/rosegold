@@ -842,6 +842,7 @@ textarea {
   background: linear-gradient(160deg, rgba(255, 252, 249, 0.94), rgba(255, 242, 235, 0.8));
   text-align: left;
   color: #593e38;
+  text-decoration: none;
   cursor: pointer;
   box-shadow: 0 12px 30px rgba(117, 80, 67, 0.14);
   transition: transform 220ms ease, box-shadow 220ms ease;
@@ -900,97 +901,55 @@ textarea {
   box-shadow: 0 6px 16px rgba(54, 33, 27, 0.2);
 }
 
-.video-lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
-  display: grid;
-  place-items: center;
-  padding: 1rem;
+@media (max-width: 600px) {
+  .video-showcase {
+    padding: 0.8rem;
+  }
+
+  .video-page-card {
+    padding: 1rem;
+  }
+
+  .video-page-card h2 {
+    font-size: 1.35rem;
+  }
 }
 
-.video-lightbox-backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(39, 19, 14, 0.72);
-  backdrop-filter: blur(4px);
+
+.video-page-section {
+  padding: clamp(2rem, 5vw, 3.5rem) 0;
 }
 
-.video-lightbox-dialog {
-  position: relative;
-  width: min(920px, 100%);
-  border-radius: 18px;
-  border: 1px solid rgba(251, 228, 216, 0.68);
-  background: linear-gradient(165deg, rgba(255, 250, 246, 0.96), rgba(255, 241, 233, 0.92));
-  box-shadow: 0 20px 54px rgba(34, 17, 13, 0.45);
-  padding: 0.8rem;
+.video-page-card {
+  border: 1px solid rgba(244, 214, 197, 0.75);
+  border-radius: 22px;
+  background: linear-gradient(155deg, rgba(255, 247, 243, 0.72), rgba(246, 216, 202, 0.32));
+  box-shadow: 0 14px 36px rgba(56, 32, 24, 0.14);
+  padding: clamp(1.1rem, 3vw, 1.6rem);
 }
 
-.video-lightbox-close {
-  position: absolute;
-  top: -0.6rem;
-  right: -0.3rem;
-  width: 2.2rem;
-  height: 2.2rem;
-  border-radius: 999px;
-  border: 1px solid rgba(250, 225, 211, 0.9);
-  background: #fff8f4;
-  color: #a46d5d;
-  font-size: 1.4rem;
-  cursor: pointer;
+.video-page-card h2 {
+  margin: 0 0 0.45rem;
 }
 
-.video-frame-wrap {
+.video-page-card p {
+  margin: 0 0 1rem;
+}
+
+.video-page-frame-wrap {
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(245, 213, 198, 0.92);
   background: radial-gradient(circle at top, rgba(255, 247, 242, 0.95), rgba(236, 198, 182, 0.86));
 }
 
-.video-frame-wrap iframe {
+.video-page-frame-wrap iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
   display: block;
 }
 
-
-.video-fallback {
-  padding: 1rem;
-  text-align: center;
-  color: #7a4f43;
-  display: grid;
-  gap: 0.8rem;
-  justify-items: center;
-}
-
-.video-fallback p {
-  margin: 0;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 1.1rem;
-}
-
-.video-fallback img {
-  width: min(100%, 540px);
-  border-radius: 12px;
-  border: 1px solid rgba(245, 213, 198, 0.92);
-}
-
-@media (max-width: 600px) {
-  .video-showcase {
-    padding: 0.8rem;
-  }
-
-  .video-lightbox {
-    padding: 0.65rem;
-  }
-
-  .video-lightbox-dialog {
-    padding: 0.5rem;
-  }
-
-  .video-lightbox-close {
-    top: -0.75rem;
-    right: -0.2rem;
-  }
+.video-page-actions {
+  margin-top: 1rem;
 }
