@@ -162,26 +162,72 @@ document.querySelectorAll('.gallery[data-gallery-keyword]:not([data-render="on-o
 
 const videoLightbox = document.querySelector('#video-lightbox');
 const videoIframe = document.querySelector('#video-iframe');
+const videoFallback = document.querySelector('#video-fallback');
+const retryVideoButton = document.querySelector('#retry-video');
 const videoCards = document.querySelectorAll('.video-card[data-video-id]');
+const featuredVideoId = '_EYbESLUwtE';
+const featuredVideoEmbedBase = `https://www.youtube-nocookie.com/embed/${featuredVideoId}`;
+const defaultFeaturedVideoSrc = `${featuredVideoEmbedBase}?rel=0&modestbranding=1`;
 
 if (videoLightbox && videoIframe && videoCards.length > 0) {
+  let fallbackTimer;
+
+  const hideFallback = () => {
+    if (videoFallback) {
+      videoFallback.hidden = true;
+    }
+  };
+
+  const showFallback = () => {
+    if (videoFallback) {
+      videoFallback.hidden = false;
+    }
+  };
+
   const closeVideo = () => {
-    videoIframe.src = '';
+    clearTimeout(fallbackTimer);
+    hideFallback();
+    videoIframe.hidden = false;
+    videoIframe.src = defaultFeaturedVideoSrc;
     videoLightbox.hidden = true;
     document.body.style.overflow = '';
+  };
+
+  const playFeaturedVideo = () => {
+    clearTimeout(fallbackTimer);
+    hideFallback();
+    videoIframe.hidden = false;
+    videoIframe.src = `${featuredVideoEmbedBase}?autoplay=1&rel=0&modestbranding=1`;
+    fallbackTimer = setTimeout(() => {
+      showFallback();
+      videoIframe.hidden = true;
+    }, 4500);
   };
 
   videoCards.forEach((card) => {
     card.addEventListener('click', () => {
       const videoId = card.dataset.videoId;
-      if (!videoId) {
+      if (!videoId || videoId !== featuredVideoId) {
         return;
       }
 
-      videoIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
       videoLightbox.hidden = false;
       document.body.style.overflow = 'hidden';
+      playFeaturedVideo();
     });
+  });
+
+  retryVideoButton?.addEventListener('click', playFeaturedVideo);
+
+  videoIframe.addEventListener('load', () => {
+    clearTimeout(fallbackTimer);
+    hideFallback();
+    videoIframe.hidden = false;
+  });
+
+  videoIframe.addEventListener('error', () => {
+    showFallback();
+    videoIframe.hidden = true;
   });
 
   videoLightbox.querySelectorAll('[data-close-video]').forEach((control) => {
