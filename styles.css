@@ -596,6 +596,19 @@ h2 {
   border-radius: 16px;
 }
 
+.about-portrait-image {
+  display: block;
+  width: 100%;
+  max-height: min(78vh, 620px);
+  aspect-ratio: 3 / 4;
+  margin: 0 auto;
+  object-fit: contain;
+  object-position: center center;
+  image-orientation: from-image;
+  transform: rotate(0deg);
+  transform-origin: center center;
+}
+
 .about-copy p:first-child {
   margin-top: 0;
 }
@@ -807,6 +820,11 @@ textarea {
     object-fit: contain;
     object-position: center center;
     border-radius: 12px;
+  }
+
+  .about-portrait-image {
+    aspect-ratio: auto;
+    max-height: min(72vh, 520px);
   }
 }
 
